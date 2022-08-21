@@ -8,6 +8,7 @@
 
 <body>
 <svg style="display:none;">
+  <symbol id="logo" viewBox="0 0 140 59"> </symbol>
   <symbol id="down" viewBox="0 0 16 16">
     <polygon points="3.81 4.38 8 8.57 12.19 4.38 13.71 5.91 8 11.62 2.29 5.91 3.81 4.38" />
   </symbol>
@@ -66,7 +67,11 @@
   </symbol>
 </svg>
 <header class="page-header">
-  <nav>
+  <nav> <a href="#0" aria-label="forecastr logo" class="logo">
+    <svg width="140" height="49">
+      <use xlink:href="#logo"></use>
+    </svg>
+    </a>
     <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="#down"></use>
@@ -86,7 +91,7 @@
           <use xlink:href="#users"></use>
         </svg>
         <span>Usuarios</span> </a> </li>
-      <li> <a href="dashboard_Clientes.html" >
+      <li> <a href="dashboard_Clientes.html">
         <svg>
           <use xlink:href="#users"></use>
         </svg>
@@ -104,7 +109,11 @@
           <use xlink:href="#settings"></use>
         </svg>
         <span>Perfiles</span> </a> </li>
-
+      <li> <a href="dashboard_Planes y Servicios.html">
+        <svg>
+          <use xlink:href="#options"></use>
+        </svg>
+        <span>Planes y Servicios</span> </a> </li>
       <li></li>
       <li></li>
       <li></li>
@@ -136,111 +145,62 @@
     </div>
   </section>
   <section class="grid">
-      
       <article>
-          <div class="column">
-        
-      </div>
       <div class="column">
-        <p><a href="dashboard_Usuarios_Agregar.html"><img src="../img/Agregar.png" width="100" height="80" alt="Agregar"/></a> </p>
+        <p><a href=""><img src="../img/Agregar.png" width="100" height="80" alt="Agregar"/></a></p>
         <p class="text">Agregar</p>
       </div>
       <div class="column">
-        <p><a href="dashboard_Usuarios_Modificar.html"> <img src="../img/Contactos.png" href="" width="80" height="80" alt="Modificar"/></a> </p>
+        <p><img src="../img/Contactos.png" href="" width="80" height="80" alt="Modificar"/></p>
         <p class="text">Modificar</p>
       </div>
       <div class="column">
-        <p><a href="dashboard_Usuarios_Buscar.html"> <img src="../img/Buscar.png" width="80" height="80" alt="Buscar"/></a> </p>
+        <p><img src="../img/Buscar.png" width="80" height="80" alt="Buscar"/></p>
         <p class="text">Buscar</p>
-      </div>
-          <div class="column">
-        
       </div>
     </article>
   </section>
+    <section>
+    <div class="left-content" id="left-content">
+	<h2>Registrar un nuevo usuario</h2>
+	<div class="form">
+	  <form onsubmit="event.preventDefault();enviarFormulario();" autocomplete="off" id="Form">
+		<div>
+		  <label>Cédula </label>&nbsp;<label class="Errores" id="dniError"></label>
+		  <input type="text" name="dni" id="dni" maxlength="10" placeholder="Ingrese su Numero de Cedula"/>
+		</div>
+		<div>
+		  <label>Nombre y Apellido </label>&nbsp;<label class="Errores" id="NombreCompletoError"></label>
+		  <input type="text" name="NombreCompleto" id="NombreCompleto" placeholder="Ingrese su Nombre y Apellido"/>
+		</div>
+		<div>
+		  <label>Usuario </label>&nbsp;<label class="Errores" id="nombreUsuarioError"></label>
+		  <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingrese un Nombre de Usuario"/>
+		</div>
+		<div>
+		  <label>Contraseña</label>&nbsp;<label class="Errores" id="passwordError"></label>
+		  <input type="password" name="password" id="password" placeholder="Mínimo 8 caracteres"/>
+		</div>
+		<div>
+		  <label>Confirmar la contraseña </label>&nbsp;<label class="Errores" id="confirmarPassError"></label>
+		  <input type="password" name="confirmarPass" id="confirmarPass" placeholder= "Mínimo 8 caracteres" />
+		</div>
+		<div>
+		  <label>Email </label>&nbsp;<label class="Errores" id="emailError"></label>
+		  <input type="text" name="email" id="email" placeholder="Ingrese su direccion de correo electronico"/>
+		</div>
+		<div class="FormularioBotones">
+		  <input type="reset" value="Restablecer">
+		  <input type="submit" value="Registrar"/>
+		  
+		</div>
+	  </form>
+	</div>
+	</div>
+    </section>
 </section>
-    <main>
-			<div class="slides">
-            <div class="slide" id="2">
-				<div class="conte">
-				<h2>Registrar un nuevo usuario</h2>
-				<p id="nombreSeccion">En esta sección podrás Crear un nuevo usuario y registrarlo en el sistema.</p>
-				<div class="form">
-				  <form onsubmit="event.preventDefault();enviarFormulario();" id="Form">
-					<div>
-					  <label>Cédula </label>&nbsp;<label class="Errores" id="dniError"></label>
-					  <input type="text" name="dni" id="dni" maxlength="10" placeholder="Ingrese su Numero de Cedula"/>
-					</div>
-					<div>
-					  <label>Nombre y Apellido </label>&nbsp;<label class="Errores" id="NombreCompletoError"></label>
-					  <input type="text" name="NombreCompleto" id="NombreCompleto" placeholder="Ingrese su Nombre y Apellido"/>
-					</div>
-					<div>
-					  <label>Usuario </label>&nbsp;<label class="Errores" id="nombreUsuarioError"></label>
-					  <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingrese un Nombre de Usuario"/>
-					</div>
-					<div>
-					  <label>Contraseña</label>&nbsp;<label class="Errores" id="passwordError"></label>
-					  <input type="password" name="password" id="password" placeholder="Mínimo 8 caracteres"/>
-					</div>
-					<div>
-					  <label>Confirmar la contraseña </label>&nbsp;<label class="Errores" id="confirmarPassError"></label>
-					  <input type="password" name="confirmarPass" id="confirmarPass" placeholder= "Mínimo 8 caracteres" />
-					</div>
-					<div>
-					  <label>Email </label>&nbsp;<label class="Errores" id="emailError"></label>
-					  <input type="text" name="email" id="email" placeholder="Ingrese su direccion de correo electronico"/>
-					</div>
-					<p>
-					  <label for="select">Estado</label>
-					  <select name="estado" id="estado">
-					  <option>Activo</option>
-					  <option>Inactivo</option>
-					  </select>
-					</p>
-					<div class="FormularioBotones">
-					  <input type="reset" value="Restablecer">
-					  <input type="submit" value="Registrar"/>
-
-					</div>
-				  </form>
-				</div>
-				</div>
-				</div>
-				<div class="slide" id="3">
-					<div class="conte">
-					<h2>REPORTE</h2>
-					<p id="nombreSeccion1">En esta sección se podra visualizar los usuarios ya registrados.</p>
-					<div class= "form-group" >
-						<button type="button" class="report" id="cargar" onClick="traerDatos()">CARGAR DATOS</button>
-					</div>
-					<div class="container">
-						<table>
-							<td>
-								<table class="list" id="employeeList_report">
-									<thead>
-										<tr>
-											<th>Cédula</th>
-											<th>Nombres Completos</th>
-											<th>Usuario</th>
-											<th>Contraseña</th>
-											<th>Email</th>
-											<th>Estado</th>
-											<th></th>
-										</tr>
-									</thead>
-									<tbody></tbody>
-								</table>
-							</td>
-						</table>
-					</div>
-					</div>
-				</div>
-			</div>
-		</main>
 <script src="../js/dashboard.js"></script>
     <script src="../js/CRUD.js"></script>
 	<script src="../js/validaciones.js"></script>
-     
 </body>
 </html>

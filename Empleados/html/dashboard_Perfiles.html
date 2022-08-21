@@ -65,7 +65,11 @@
   </symbol>
 </svg>
 <header class="page-header">
-  <nav>
+  <nav> <a href="#0" aria-label="forecastr logo" class="logo">
+    <svg width="140" height="49">
+      <use xlink:href="#logo"></use>
+    </svg>
+    </a>
     <button class="toggle-mob-menu" aria-expanded="false" aria-label="open menu">
     <svg width="20" height="20" aria-hidden="true">
       <use xlink:href="#down"></use>
@@ -103,6 +107,11 @@
           <use xlink:href="#settings"></use>
         </svg>
         <span>Perfiles</span> </a> </li>
+      <li> <a href="dashboard_Planes y Servicios.html">
+        <svg>
+          <use xlink:href="#options"></use>
+        </svg>
+        <span>Planes y Servicios</span> </a> </li>
       <li></li>
       <li></li>
       <li></li>
@@ -135,9 +144,6 @@
   </section>
   <section class="grid">
      <article>
-         <div class="column">
-        
-      </div>
       <div class="column">
         <p><a href=""><img src="../img/Agregar.png" width="100" height="80" alt="Agregar"/></a></p>
         <p class="text">Agregar</p>
@@ -146,12 +152,52 @@
         <p><img src="../img/Contactos.png" href="" width="80" height="80" alt="Modificar"/></p>
         <p class="text">Modificar</p>
       </div>
-         <div class="column">
-        
-      </div>
     </article>
       
-      
+      <div class="left-content" id="left-content">
+	<h2>Registrar un nuevo usuario</h2>
+    <p id="nombreSeccion">En esta sección podrás Crear un nuevo usuario y registrarlo en el sistema.</p>
+	<div class="form">
+	  <form onsubmit="event.preventDefault();enviarFormulario();" autocomplete="off" id="Form">
+		<div>
+		  <label>Cédula </label>&nbsp;<label class="Errores" id="dniError"></label>
+		  <input type="text" name="dni" id="dni" maxlength="10" placeholder="Ingrese su Numero de Cedula"/>
+		</div>
+		<div>
+		  <label>Nombre y Apellido </label>&nbsp;<label class="Errores" id="NombreCompletoError"></label>
+		  <input type="text" name="NombreCompleto" id="NombreCompleto" placeholder="Ingrese su Nombre y Apellido"/>
+		</div>
+		<div>
+		  <label>Usuario </label>&nbsp;<label class="Errores" id="nombreUsuarioError"></label>
+		  <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingrese un Nombre de Usuario"/>
+		</div>
+		<div>
+		  <label>Contraseña</label>&nbsp;<label class="Errores" id="passwordError"></label>
+		  <input type="password" name="password" id="password" placeholder="Mínimo 8 caracteres"/>
+		</div>
+		<div>
+		  <label>Confirmar la contraseña </label>&nbsp;<label class="Errores" id="confirmarPassError"></label>
+		  <input type="password" name="confirmarPass" id="confirmarPass" placeholder= "Mínimo 8 caracteres" />
+		</div>
+		<div>
+		  <label>Email </label>&nbsp;<label class="Errores" id="emailError"></label>
+		  <input type="text" name="email" id="email" placeholder="Ingrese su direccion de correo electronico"/>
+		</div>
+		<p>
+		  <label for="select">Estado</label>
+		  <select name="estado" id="estado">
+		  <option>Activo</option>
+		  <option>Inactivo</option>
+		  </select>
+		</p>
+		<div class="FormularioBotones">
+		  <input type="reset" value="Restablecer">
+		  <input type="submit" value="Registrar"/>
+		  
+		</div>
+	  </form>
+	</div>
+	</div>
   </section>
 </section>
 <script src="../js/dashboard.js"></script>

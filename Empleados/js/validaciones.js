@@ -119,24 +119,24 @@ function cedulaEcuatoriana(num){
 
           //Agrupo los impares, los multiplico por un factor de 2, si la resultante es > que 9 le restamos el 9 a la resultante
 		var numero1 = num.substring(0,1);
-		numero1 = (numero1 * 2);
-		if( numero1 > 9 ){ numero1 = (numero1 - 9); }
+		var numero1 = (numero1 * 2);
+		if( numero1 > 9 ){ var numero1 = (numero1 - 9); }
 
 		var numero3 = num.substring(2,3);
-		numero3 = (numero3 * 2);
-		if( numero3 > 9 ){ numero3 = (numero3 - 9); }
+		var numero3 = (numero3 * 2);
+		if( numero3 > 9 ){ var numero3 = (numero3 - 9); }
 
 		var numero5 = num.substring(4,5);
-		numero5 = (numero5 * 2);
-		if( numero5 > 9 ){ numero5 = (numero5 - 9); }
+		var numero5 = (numero5 * 2);
+		if( numero5 > 9 ){ var numero5 = (numero5 - 9); }
 
 		var numero7 = num.substring(6,7);
-		numero7 = (numero7 * 2);
-		if( numero7 > 9 ){ numero7 = (numero7 - 9); }
+		var numero7 = (numero7 * 2);
+		if( numero7 > 9 ){ var numero7 = (numero7 - 9); }
 		
 		var numero9 = num.substring(8,9);
-		numero9 = (numero9 * 2);
-		if( numero9 > 9 ){ numero9 = (numero9 - 9); }
+		var numero9 = (numero9 * 2);
+		if( numero9 > 9 ){ var numero9 = (numero9 - 9); }
 
 		var impares = numero1 + numero3 + numero5 + numero7 + numero9;
 
@@ -154,7 +154,7 @@ function cedulaEcuatoriana(num){
 
           //Si el digito validador es = a 10 toma el valor de 0
 		if(digito_validador == 10)
-			digito_validador = 0;
+			var digito_validador = 0;
 
           //Validamos que el digito validador sea igual al de la cedula
 		if(digito_validador == ultimo_digito){

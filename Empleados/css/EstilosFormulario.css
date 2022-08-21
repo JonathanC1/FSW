@@ -28,7 +28,7 @@ h2{
 	padding: 20px;
 }
 .Errores {
-	color: cyan;
+	color: red;
     font-size: small;
     font-style: oblique;
 }
