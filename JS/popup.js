@@ -1,7 +1,3 @@
-/* fecha */
-var fecha = new Date();
-document.getElementById("demo").innerHTML=(fecha.getDate())+"/"+(fecha.getMonth()+1)+ "/" + (fecha.getFullYear());
-
 /* VENTANA EMERGENTE */
 var btnAbrirPopup = document.getElementById('btn-abrir-popup'),
 	overlay = document.getElementById('overlay'),
