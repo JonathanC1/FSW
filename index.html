@@ -1,31 +1,40 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<title>Documento sin título</title>
-    <link rel="stylesheet" href="Login/css/login.css" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO</title>
+    <link rel="stylesheet" href="CSS/estilos.css">
+	<link rel="icon" href="IMG/icon.png">
+    <style type="text/css">
+    body,td,th {
+    font-family: 'Open Sans', sans-serif;
+}
+body {
+    background-color: #FFFFFF;
+    background-image: url(IMG/fondo1.jpg);
+}
+    </style>
 </head>
-
 <body>
-    <div class="login-box">
-  <h2>Login</h2>
-  <form>
-    <div class="user-box">
-      <input type="text" name="" required="">
-      <label>User</label>
-    </div>
-    <div class="user-box">
-      <input type="password" name="" required="">
-      <label>Contrasena</label>
-    </div>
-    <a href="Admin/html/dashboard.html">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      Ingresar
-    </a>
-  </form>
-</div>
+    <form action="" method="POST" id="form">
+        <div class="form">
+          <h1>Ingrese los datos</h1>
+          <div class="grupo">
+                <input type="text" name="" id="user" ><span class="barra"></span>
+                <label for=""><h2>Usuario</h2></label>
+            </div>
+            <div class="grupo">
+                <input type="password" name="" id="password" ><span class="barra"></span>
+                <label for=""><h2>Contraseña</h2></label>
+            </div>
+			
+		
+			<button type="reset">Resetear</button>
+			<button type="submit">Enviar</button>
+            <p class="warnings" id="warnings"></p>
+        </div>
+    </form>
+	<script src="JS/script1.js"></script>
 </body>
 </html>
