@@ -1,34 +1,34 @@
 const editarformulario = document.getElementById('editarformulario');
 const editarInputs = document.querySelectorAll('#editarformulario input');
 const expresionesEditar = {
-	editarNombreU: /^[A-Za-zÀ-ÿ]{3,15}$/, // Letras y espacio
-	editarNombreR: /^[A-Za-zÀ-ÿ]{3,50}$/, // Letras y espacio
-	editarUsuarioR: /^[a-zA-Z0-9\_\-]{8,16}$/, // Letras, numeros, guion y guion_bajo
+	editarNombre: /^[A-Za-zÀ-ÿ]{3,15}$/, // Letras y espacio
+	editarApellido: /^[A-Za-zÀ-ÿ]{3,50}$/, // Letras y espacio
+	editarUsuario: /^[a-zA-Z0-9\_\-]{8,16}$/, // Letras, numeros, guion y guion_bajo
 	editarPassword: /^[a-zA-Z0-9\_\-]{8,15}$/, // Letras, numeros, guion y guion_bajo
 	editarCorreo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, //correo
-	editarCedulaR: /^.{10}$/, // 10 digitos.
+	editarCedula: /^.{10}$/, // 10 digitos.
 }
 
 
 const camposEditar={
-	editarNombreU: false,
-	editarNombreR: false,
-	editarUsuarioR: false,
+	editarNombre: false,
+	editarApellido: false,
+	editarUsuario: false,
 	editarPassword: false,
 	editarCorreo: false,
-	editarCedulaR: false
+	editarCedula: false
 }
 
 const validarFormularioEditar =(e)=>{
 	switch(e.target.name){
-		case "editarNombreU":
-			validarCampoEditar(expresionesEditar.editarNombreU, e.target, 'editarNombreU');
+		case "editarNombre":
+			validarCampoEditar(expresionesEditar.editarNombre, e.target, 'editarNombre');
 		break;
-		case "editarNombreR":
-			validarCampoEditar(expresionesEditar.editarNombreR, e.target, 'editarNombreR');
+		case "editarApellido":
+			validarCampoEditar(expresionesEditar.editarApellido, e.target, 'editarApellido');
 		break;
-		case "editarUsuarioR":
-			validarCampoEditar(expresionesEditar.editarUsuarioR, e.target, 'editarUsuarioR');
+		case "editarUsuario":
+			validarCampoEditar(expresionesEditar.editarUsuario, e.target, 'editarUsuario');
 		break;
 		case "editarPassword":
 			validarCampoEditar(expresionesEditar.editarPassword, e.target, 'editarPassword');
@@ -36,13 +36,13 @@ const validarFormularioEditar =(e)=>{
 		case "editarCorreo":
 			validarCampoEditar(expresionesEditar.editarCorreo, e.target, 'editarCorreo');
 		break;
-		case "editarCedulaR":
-			validarCedulaEditar(expresionesEditar.editarCedulaR, e.target, 'editarCedulaR');
+		case "editarCedula":
+			validarCedulaEditar(expresionesEditar.editarCedula, e.target, 'editarCedula');
 		break;
 	}
 }
 function validarCedulaEditar(expresion, input, campo) {
-	var cad = document.getElementById("editarCedulaR").value.trim();
+	var cad = document.getElementById("editarCedula").value.trim();
     var total = 0;
     var longitud = cad.length;
     var longcheck = longitud - 1;
@@ -106,15 +106,15 @@ editarInputs.forEach((input) => {
 });
 editarformulario.addEventListener('submit', (e) => {
 	e.preventDefault();
-	if(camposEditar.editarNombreU && camposEditar.editarNombreR && camposEditar.editarUsuarioR && camposEditar.editarPassword && camposEditar.editarCorreo && camposEditar.editarCedulaR){
+	if(camposEditar.editarNombre && camposEditar.editarApellido && camposEditar.editarUsuario && camposEditar.editarPassword && camposEditar.editarCorreo && camposEditar.editarCedula){
 		alert("se ejecuta");
 		console.log(idAlumnoEditando)
-		usuarios[idAlumnoEditando].nombreU = editarNombreU.value.toString();
-		usuarios[idAlumnoEditando].nombreR = editarNombreR.value.toString();
-		usuarios[idAlumnoEditando].usuarioR = editarUsuarioR.value.toString();
+		usuarios[idAlumnoEditando].Nombre = editarNombre.value.toString();
+		usuarios[idAlumnoEditando].Apellido = editarApellido.value.toString();
+		usuarios[idAlumnoEditando].Usuario = editarUsuario.value.toString();
 		usuarios[idAlumnoEditando].editarPassword = editarPassword.value.toString();
 		usuarios[idAlumnoEditando].correo = editarCorreo.value.toString();
-		usuarios[idAlumnoEditando].cedulaR = editarCedulaR.value.toString();
+		usuarios[idAlumnoEditando].Cedula = editarCedula.value.toString();
 		document.getElementById('formulario__mensaje-exito').innerHTML="Guardado exitosamente!";
 		cargarDatos();
 	}else{
